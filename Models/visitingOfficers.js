@@ -22,21 +22,21 @@ const visitingOfficers = new mongoose.Schema({
   },
   designation: {
     type: String,
-    required: [true, "Enter your designation"],
+    // required: [true, "Enter your designation"],
     enum: ["admin", "assistant"],
   },
   homeDistrict: {
     type: String,
-    required: [true, "Please provide your home district"],
+    // required: [true, "Please provide your home district"],
   },
   department: {
     type: String,
-    required: [true, "Please provide your department"],
+    // required: [true, "Please provide your department"],
     enum: ["Adminstration", "Finance"],
   },
   postingLocation: {
     type: String,
-    required: [true, "Provide posting details"],
+    // required: [true, "Provide posting details"],
   },
 });
 
