@@ -17,6 +17,8 @@ exports.signUp = async (req, res) => {
 
   const token = createToken({ id: officer._id });
 
+  res.cookie("jwt", token);
+
   res.status(200).json({
     status: "Success",
     data: {
