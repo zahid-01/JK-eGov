@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const Officer = require("../Models/visitingOfficers");
+const User = require("../Models/userModel");
 
 const createToken = (id) => {
   return jwt.sign(id, process.env.SECRET_JWT, {
@@ -8,11 +8,14 @@ const createToken = (id) => {
 };
 
 exports.signUp = async (req, res) => {
-  // const token = jwt.sign(req.body.password, process.env.SECRET_JWT);
-  const officer = await Officer.create({
+  const officer = await User.create({
     name: req.body.name,
     email: req.body.email,
-    mobile: req.body.phone,
+    mobile: req.body.mobile,
+    designation: req.body.designation,
+    homeDistrict: req.body.homeDistrict,
+    department: req.body.department,
+    password: req.body.password,
   });
 
   const token = createToken({ id: officer._id });
@@ -21,6 +24,28 @@ exports.signUp = async (req, res) => {
 
   res.status(200).json({
     status: "Success",
+    data: {
+      token,
+    },
+  });
+};
+
+exports.signIn = async (req, res) => {
+  if (!req.body.email || !req.body.password)
+    return res.status(400).json({ message: "Enter your credentials" });
+
+  const user = await User.findOne({ email: req.body.email });
+  const check = await user?.checkPassword(req.body.password, user.password);
+
+  if (!user || !check) {
+    return res.status(400).json({ message: "Invalid credentials" });
+  }
+
+  const token = createToken({ id: user._id });
+
+  res.status(200).json({
+    status: "Success",
+    message: "Logged in successfully",
     data: {
       token,
     },
