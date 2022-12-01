@@ -14,23 +14,6 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     unique: [true, "Email already exists"],
   },
-  mobile: {
-    type: Number,
-    maxlength: 10,
-    minlength: 10,
-  },
-  designation: {
-    type: String,
-    enum: ["admin", "assistant"],
-  },
-  homeDistrict: String,
-  department: {
-    type: String,
-    enum: ["Adminstration", "Finance"],
-  },
-  postingLocation: {
-    type: String,
-  },
   password: {
     type: String,
     minlength: 8,

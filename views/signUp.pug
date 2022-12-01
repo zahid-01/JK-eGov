@@ -1,0 +1,24 @@
+extends main 
+
+block content
+  head
+    meta(charset='utf-8')
+    title signUP
+    script(src='/js/jquery.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/aos.js')
+    script(src='/js/owl.carousel.min.js')
+    script(src='/js/custom.js')
+    link(rel='stylesheet' href='/css/commonfile.css')
+
+  #bg
+  form.signUp--form
+    h1 sign Up
+    .form-field
+      input#name(type='text' placeholder='Name' required='')
+    .form-field
+      input#email(type='email' placeholder='Email / Username' required='')
+    .form-field
+      input#password(type='password' placeholder='Password' required='')
+    .form-field
+      button.btn(type='submit') Sign Up

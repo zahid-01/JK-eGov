@@ -1,0 +1,19 @@
+nav.navbar.navbar-expand-lg.position-absolute
+    .container
+      a.navbar-brand(href='/')
+        i.fa.fa-line-chart
+        |               JaKEGA
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          if user 
+            li.nav-item
+              button.btn.log-outBtn(type='submit') Log Out
+          else
+            li.nav-item
+              a.nav-link(href='log-in')
+                strong Login
+            li.nav-item
+              a.nav-link(href='sign-up')
+                strong Sign Up

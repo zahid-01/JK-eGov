@@ -1,0 +1,21 @@
+extends main 
+
+block content
+
+  section
+    head
+      meta(charset='utf-8')
+      title Login
+      link(rel='stylesheet' href='/css/commonfile.css')
+      
+    #bg
+    section.form--section
+      .container
+        form.login--form
+          h1 Log In
+          .form-field
+            input#email(type='email' placeholder='Email / Username' required='')
+          .form-field
+            input#password(type='password' placeholder='Password' required='')
+          .form-field
+            button.btn(type='submit') Log in

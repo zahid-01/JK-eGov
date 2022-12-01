@@ -9,6 +9,7 @@ userRouter.route("/").post(User.addOfficer).get(User.getOfficers);
 userRouter.route("/:id").patch(User.updateOfficer).delete(User.deleteOfficer);
 
 userRouter.post("/sign-up", authController.signUp);
-userRouter.get("/sign-in", authController.signIn);
+userRouter.post("/sign-in", authController.signIn);
+userRouter.get("/log-out", authController.logout);
 
 module.exports = userRouter;
