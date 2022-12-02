@@ -1,0 +1,43 @@
+extends main 
+
+block content
+  head
+    meta(charset='utf-8')
+    title UlbAndProfileDetails
+    link(rel='stylesheet' href='/css/UlbAndProfileDetails.css')
+  #bg
+  form#ulb--form(data-surveyOfficer=`${user._id}`)
+    h1  Locational details of ULB
+    .form-field
+      label(for='')
+        | Name of the Urban Local Bodies:
+        br
+      input#ulbName(type='text' placeholder='NameUlb' required='')
+    .form-field
+      label(for='')
+        | Local Government Directory (LGD) code of the ULB:
+        br
+      input#ulbCode(type='text' placeholder='codeUlb' required='')
+    .form-field
+      label(for='')
+        | Name of District:
+        br
+      input#district(type='text' placeholder='districUlb' required='')
+    h1  Urban Local Bodies Profile
+    .form-field
+      label(for='')
+        | No. of wards in the ULB:
+        br
+      input#noOfWards(type='text' placeholder='noOfUlbWards' required='')
+    .form-field
+      label(for='')
+        | No. of households in the ULB:
+        br
+      input#noOfHouseHolds(type='text' placeholder='noOfHouseHolds' required='')
+    .form-field
+      label(for='')
+        | Population (approx..) of the ULB:
+        br
+      input#population(type='text' placeholder='populationOfUlb' required='')
+    .form-field
+      button.btn(type='submit') Submit

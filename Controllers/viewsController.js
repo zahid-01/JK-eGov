@@ -9,3 +9,7 @@ exports.logIn = (req, res) => {
 exports.home = (req, res) => {
   res.status(200).render("homePage");
 };
+
+exports.ulbForm = (req, res) => {
+  res.status(200).render("ulbForm");
+};

@@ -7,5 +7,6 @@ viewsRouter.use(authCntrl.isLoggedIn);
 viewsRouter.route("/sign-up").get(viewsCntrl.signUp);
 viewsRouter.route("/log-in").get(viewsCntrl.logIn);
 viewsRouter.route("/").get(viewsCntrl.home);
+viewsRouter.get("/fill-form", viewsCntrl.ulbForm);
 
 module.exports = viewsRouter;
