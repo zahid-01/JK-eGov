@@ -1,4 +1,3 @@
-import "@babel/polyfill";
 import { login, logout } from "./login";
 import { signUp } from "./signUp";
 import { addUlb } from "./ulbForm";
