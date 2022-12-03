@@ -19,6 +19,7 @@ export const login = async (email, password) => {
     }
   } catch (e) {
     console.log(e.message);
+    document.querySelector(".login--label").textContent = "Invalid Credentials";
   }
 };
 

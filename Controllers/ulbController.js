@@ -1,6 +1,7 @@
 const ULB = require("../Models/ulbModel");
+const { catchError } = require("../Error/catchError");
 
-exports.addUlb = async (req, res) => {
+exports.addUlb = catchError(async (req, res) => {
   const ulb = await ULB.create(req.body);
   res.status(201).json({
     status: "Success",
@@ -8,9 +9,9 @@ exports.addUlb = async (req, res) => {
       data: ulb,
     },
   });
-};
+});
 
-exports.updateUlb = async (req, res) => {
+exports.updateUlb = catchError(async (req, res) => {
   const updatedUlb = await ULB.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
@@ -22,18 +23,18 @@ exports.updateUlb = async (req, res) => {
       updatedData: updatedUlb,
     },
   });
-};
+});
 
-exports.deleteUlb = async (req, res) => {
+exports.deleteUlb = catchError(async (req, res) => {
   await ULB.findByIdAndDelete(req.params.id);
 
   res.status(204).json({
     status: "Success",
     data: null,
   });
-};
+});
 
-exports.getAllUlb = async (req, res) => {
+exports.getAllUlb = catchError(async (req, res) => {
   const ulb = await ULB.find().populate({
     path: "visitingOfficer",
     select: "name",
@@ -46,4 +47,4 @@ exports.getAllUlb = async (req, res) => {
       data: ulb,
     },
   });
-};
+});

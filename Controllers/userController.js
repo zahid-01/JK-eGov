@@ -1,6 +1,8 @@
+const { catchError } = require("../Error/catchError");
+const siteError = require("../Error/siteError");
 const User = require("../Models/userModel");
 
-exports.addOfficer = async (req, res) => {
+exports.addOfficer = catchError(async (req, res) => {
   const officer = await User.create(req.body);
   res.status(201).json({
     status: "Success",
@@ -8,7 +10,7 @@ exports.addOfficer = async (req, res) => {
       data: officer,
     },
   });
-};
+});
 
 exports.updateOfficer = async (req, res) => {
   const updatedOfficer = await User.findByIdAndUpdate(req.params.id, req.body, {

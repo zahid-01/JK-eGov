@@ -1,9 +1,14 @@
-extends base
+extends main 
 
 block content
-    main.main
-        .error
-            .error__title
-                h2.heading-secondary.heading-secondary--error Uh oh! Something went wrong!   
-                h2.error__emoji 😢 🤯
-            .error__msg= msg
+		head
+			meta(charset='utf-8')
+			title Login
+			link(rel='stylesheet' href='/css/commonfile.css')
+		#bg
+		-console.log('Error was called', msg)
+		section 
+			.container
+				h2 Uh oh! Something went wrong!   
+					h2 😢 🤯
+				h1= msg

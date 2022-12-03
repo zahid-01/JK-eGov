@@ -7,6 +7,7 @@ const ulbRouter = require("./Routers/ulbRoutes");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyparser = require("body-parser");
+const errorController = require("./Controllers/errorController");
 
 // app.use(morgan("dev"));
 // app.use(bodyparser());
@@ -19,5 +20,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", viewsRouter);
 app.use("/egov/api/user", userRouter);
 app.use("/egov/api/ulb", ulbRouter);
+
+app.use(errorController);
 
 module.exports = app;

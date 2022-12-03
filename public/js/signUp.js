@@ -17,5 +17,6 @@ export const signUp = async (name, email, password) => {
     }
   } catch (e) {
     console.log(e);
+    document.querySelector(".sign--up--label").textContent = "User Already exists";
   }
 };
