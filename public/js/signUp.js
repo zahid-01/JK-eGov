@@ -13,6 +13,7 @@ export const signUp = async (name, email, password) => {
     });
 
     if (res.data.status === "Success") {
+      console.log("New deploy");
       window.setTimeout(() => {
         location.assign("/");
       }, 1000);
