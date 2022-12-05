@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
-    "build.js": "parcel build ./public/js/index.js "
+    "build.js": "parcel build ./public/js/index.js ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
   },
   "author": "ZAHID HUSSAIN KHAN",
   "license": "ISC",
