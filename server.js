@@ -15,3 +15,11 @@ mongoose
 app.listen(process.env.PORT, () => {
   console.log(`Process running at port ${process.env.PORT}`);
 });
+
+process.on("unhandledRejection", (err) => {
+  console.log(err);
+  console.log("UNHANDLED REJECTION! 💥 SHUTTING DOWN...");
+  server.close(() => {
+    process.exit(1);
+  });
+});
