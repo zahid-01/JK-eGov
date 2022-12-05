@@ -13,7 +13,9 @@ export const signUp = async (name, email, password) => {
     });
 
     if (res.data.status === "Success") {
-      console.log("User created");
+      window.setTimeout(() => {
+        location.assign("/");
+      }, 1000);
     }
   } catch (e) {
     console.log(e);
