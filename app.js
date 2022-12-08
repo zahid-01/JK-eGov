@@ -14,7 +14,7 @@ const cookieParser = require("cookie-parser");
 const bodyparser = require("body-parser");
 const errorController = require("./Controllers/errorController");
 
-// app.use(morgan("dev"));
+app.use(morgan("dev"));
 // app.use(bodyparser());
 //Mongo sanitize
 app.use(mongoSanitize());
